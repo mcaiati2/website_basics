@@ -3,16 +3,42 @@
 <html>
     <head>
         <title>Website Basics</title>
+        <!-- make sure you put their link above yours so that it loads first. you're loading in their css so that you can edit it later. -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+
+
     </head>
     
     <body>
         <header>
-            <h3>Logo</h3>
+            <a class= "active" href = './index.html'>
+                <h3>Home</h3>
+            </a>
 
             <nav>
-               <a href="https://www.google.com/">Google</a>
                <a href="./about.html">About</a>
+               <a href="./contact.html">Contat</a>
             </nav>
+        </header>
 
+        <main>
+            <section>
+                <!-- <p style="color: orange; background-color:
+                lightseagreen;">Hello Everyone.</p> -->
+                <p>Hello Everyone</p>
+                <h1>I'm Mike Caiati</h1>
+                <!-- icon is copied from fontawesome -->
+                <button>Software Developer <i class="fa-solid fa-arrow-right"></i></button>
+            </section>
+
+            <aside>
+                <p>Contact Me</p>     
+                <i class="fa-solid fa-phone"></i>
+                <i class="fa-solid fa-envelope"></i>
+                <i class="fa-solid fa-globe"></i>         
+            </aside>
+        </main>
     </body> 
+
 </html>
