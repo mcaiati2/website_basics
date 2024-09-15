@@ -1,15 +1,29 @@
 /* VARIABLES (reusable values). root means "set it at the root and it cascades down. root refers to the html file. it's like a global wrapper around everything. double dash is what creates the variable.  */
 :root {
     /* what you write after the 2 dashes is up to you, we're using green but it can be named anything */
-    --green: #28ff8a;
+    --green: #5ac88c;
 }
 
 /* RESETS are universal selectors for every element to reset their values to something else. "before I do anything else on the page, I want all elements to have this background, margin, etc. */
-body {
-    background: #1222fd;
+
+/* height set to 100% to make sure the body takes up the full page */
+/* margin set to 0 to make sure the default margin is removed */
+html, body {
+    background: #151517;
+    height: 100%;
     margin: 0;
     font-family: sans-serif;
     overflow-x: hidden;
+    /* display uses flexbox layout */
+    display: flex;
+    /* flex-direction arranges children in a column */
+    flex-direction: column;
+}
+
+
+/* class allows the section to grow to take up all of the available space */
+.main-content {
+    flex: 1;
 }
 
 h3 {
@@ -50,12 +64,15 @@ display: flex;
  /* Push the direct children as far apart as possible using the space between them (x-axis*/
  /* justify-content: space-between */
  background: #191c2fde;
- padding: 25px 7% 20px;
+ padding: 80px 7% 20px;
+ font-size: 35px;
+ font-weight: 200;
 }
 
 header nav {
 /* Percentage values are always a percentage of the parent's values (width/height) */
 margin-left: 150px;
+margin-bottom: 25px;
 }
 
 header a {
@@ -79,18 +96,20 @@ header nav a:not(:last-child) {
 main {
     display: flex;
     justify-content: space-between;
-    padding: 45px 10%, 0, 3%;
+    padding: 100px 175px;
+    /* padding: 45px 10%, 0, 3%; */
 }
 
 section p {
     /* var is calling upon the variable */
-    color: var(--green)
+    color: var(--green);
+    font-size: 25px;
 }
 
 /* pixels doesn't change. rem makes font size 3 the amount of pixels. rem root estimated value. it's saying 3 of whatever the browser's style sheet is. 16 base amound. if a style sheet is px and rem is set to 1, it's 16. if a value isn't set manually, it will always fall back to the initial pixel size of 16  */
 section h1 {
     color: #ffff;
-    font-size: 3rem;
+    font-size: 5rem;
     /* font-size: 1em; em would be 100% the size of parent's font size. 2em would be 200%. take the parent value and multiply it by whatever you set. 1em is exactly the same as adding 100%  */
     text-transform: uppercase;
     /* margin added some spacing */
@@ -101,7 +120,7 @@ section h1 {
 /* we add padding to make the border bigger. padding is set this way because we only wanted padding on the left. transition means if any property changes, take .4 seconds for that to happen */
 section button{
     background: none;
-    border: 2px solid var(green);
+    border: 2px solid var(--green);
     padding: 0 0 0 15px;
     color: #fff;
     text-transform: uppercase;
@@ -115,7 +134,7 @@ section button{
 section button i {
     color: #191c2fde;
     font-size: 1.5rem;
-    background: var(green);
+    background: var(--green);
     padding: 10px 15px;
     margin-left: 15px;
 }
@@ -142,10 +161,19 @@ aside {
 }
 /* you are calling on the variable function to output this variable */
 aside p {
-    color: var(--green)
+    color: var(--green);
+    padding: 10px;
 }
 
 aside i {
     color: #fff;
     margin-right: 8px;
+    padding: 1px;
+}
+
+footer {
+    color: #fff;
+    background-color: #191c2fde;
+    text-align: center;
+    padding: 8px;
 }
